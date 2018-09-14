@@ -29,9 +29,10 @@ let component = ReasonReact.statelessComponent("Welcome");
 type examples =
   | Tab
   | TabCustom
-  | Stack;
+  | Stack
+  | Switch;
 
-let examplesList = [|Tab, TabCustom, Stack|];
+let examplesList = [|Tab, TabCustom, Stack, Switch|];
 
 let make =
     (~navigation: NavigationConfig.StackNavigator.navigation, _children) => {
@@ -49,6 +50,7 @@ let make =
                         | Tab => "Tab navigation"
                         | Stack => "Stack"
                         | TabCustom => "Custom TabBar"
+                        | Switch => "Switch"
                         };
                       <TouchableOpacity
                         key=route
@@ -65,6 +67,10 @@ let make =
                             | TabCustom =>
                               navigation.push(
                                 NavigationConfig.Config.CustomTabBarExample,
+                              )
+                            | Switch =>
+                              navigation.push(
+                                NavigationConfig.Config.SwitchExample,
                               )
                             }
                         )>

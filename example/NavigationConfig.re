@@ -15,8 +15,12 @@ module Config = {
     | CustomMessages
     | CustomProfile
     | CustomProfileDetails
-    | CustomProfileStats;
+    | CustomProfileStats
+    | SwitchExample
+    | SwitchFirst
+    | SwitchSecond;
 };
 
 include StackNavigator.CreateStackNavigator(Config);
 include TabNavigator.CreateTabNavigator(Config);
+include SwitchNavigator.CreateSwitchNavigator(Config);

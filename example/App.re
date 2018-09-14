@@ -29,6 +29,7 @@ module Main = {
                  | Config.UserProfile => <UserProfile navigation />
                  | Config.CustomTabBarExample =>
                    <CustomTabBarExample navigation />
+                 | Config.SwitchExample => <SwitchExample navigation />
                  | _ => <TabExample navigation />
                  }
              )
